@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>source</title>
+    <style>
+        #board {
+            width: 450px;
+            height: 450px;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            box-sizing: content-box;
+            margin: -4px;
+            padding: 0;
+        }
+        .black {
+            background-color: black;
+        }
+        .white {
+            background-color: white;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="board">
+      <!-- <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span class="black"></span>
+      <span class="white"></span>
+      <span class="black"></span> -->
+    
+</div>
+<script>
+    var board = document.getElementById("board");
+    var flag = false;
+    var prev = [0,0];
+    for(var i=0; i<4; i++){
+        for(var j=0; j<4; j++){
+            const span = document.createElement("span");
+            if (i%2==0) {
+                if (flag) span.className = "white";
+                else span.className = "black";
+            } else {
+                if (!flag) span.className = "white";
+                else span.className = "black";
+            }
+            board.appendChild(span);
+            span.addEventListener("click",function() {
+                prev[1].className = prev[0];
+                prev[0] = this.className;
+                prev[1] = this;
+                this.className = "red";
+
+            });
+            flag = !flag;
+        }
+    }
+</script>
+</body>
+</html>

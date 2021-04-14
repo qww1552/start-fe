@@ -14,9 +14,13 @@ $bug.addEventListener("click",(event) => {
     point++;
     $point.innerText = point;
     gotPoint = true;
+    $bug.classList.add("invisible");
 });
 
 let timer = setInterval(()=>{
+    if ($bug.classList.contains("invisible")) {
+        $bug.classList.remove("invisible");
+    }
     if (life <= 0) {
         alert("game over");
         clearInterval(timer);

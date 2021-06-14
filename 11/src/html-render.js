@@ -1,6 +1,9 @@
+import { saveData } from "./data-manager.js";
+
 const $result = document.querySelector("#result");
 
 function render(data) {
+    saveData(data);
     const html = data.map((todo, index) => {
         return `
     <li data-index=${index}>

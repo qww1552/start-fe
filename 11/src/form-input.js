@@ -11,7 +11,7 @@ function init(data) {
         const text = $input.value;
         if (!text) return;
         $input.value = "";
-
+        console.log(data);
         data.push({
             ...todoModel,
             text,

@@ -4,7 +4,7 @@
   "description": "> 간단한 Todo 리스트 관리 웹어플리케이션을 만들어 본다",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && cp dist/* ../docs",
     "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
